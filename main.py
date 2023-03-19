@@ -24,12 +24,11 @@ def convert_morse_code_to_string(morse_code_to_convert: list):
     decoded_string = ""
 
     for code in morse_code_to_convert:
-
         if code == " ":
             decoded_string += " "
-
-        for letter in MORSE_CODE_DICT:
-
-            if MORSE_CODE_DICT[letter] == code:
-                decoded_string += letter
+        decoded_string += ''.join(letter for letter in MORSE_CODE_DICT if MORSE_CODE_DICT[letter] == code)
     return decoded_string
+
+
+print(convert_to_morse_code("Josh Astle"))
+print(convert_morse_code_to_string(['.---', '---', '...', '....', ' ', '.-', '...', '-', '.-..', '.']))
