@@ -30,5 +30,14 @@ def convert_morse_code_to_string(morse_code_to_convert: list):
     return decoded_string
 
 
-print(convert_to_morse_code("Josh Astle"))
-print(convert_morse_code_to_string(['.---', '---', '...', '....', ' ', '.-', '...', '-', '.-..', '.']))
+if __name__ == "__main__":
+    not_done = True
+    while not_done:
+        message = input("Enter your text to be converted, or 0 to exit: ")
+
+        if message == "0":
+            not_done = False
+            break
+
+        coded_message = convert_to_morse_code(message)
+        print(f"Here is your coded message: {coded_message}")
