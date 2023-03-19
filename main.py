@@ -13,3 +13,13 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
                    '0': '-----', ', ': '--..--', '.': '.-.-.-',
                    '?': '..--..', '/': '-..-.', '-': '-....-',
                    '(': '-.--.', ')': '-.--.-'}
+
+
+def convert_to_morse_code(string_to_convert: str) -> str:
+    morse_code = ""
+    for letter in string_to_convert.upper():
+        if letter == " ":
+            morse_code += " "
+        else:
+            morse_code += MORSE_CODE_DICT[letter]
+    return morse_code
